@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ name }} - Погода</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>{{ name }} - Погода</h1>
+    <b>Статус: {{ status }}</b>
+    <b>Температура: {{ temp }}&deg;C (по ощущениям {{ feels_like }}&deg;C)</b>
+    <p> </p>
+    <p>Завтра: {{ status_tmr }}, {{ temp_tmr }}&deg;C (по ощущениям {{ feels_like_tmr }}&deg;C)</p>
+    <p>Послезавтра: {{ status_2tmr }}, {{ temp_2tmr }}&deg;C (по ощущениям {{ feels_like_2tmr }}&deg;C)</p>
+    <form action="/weather">
+        <input type="text" name="city" id="city" placeholder="Введите название города" />
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+
+</html>
